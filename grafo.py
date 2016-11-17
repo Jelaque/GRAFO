@@ -1,9 +1,11 @@
 from tkinter import*
+import tkinter.simpledialog
+import tkinter.messagebox
 
 class Grafo:
 	"""Clase de grafos"""
 
-	def __init__(self, ventana):
+	def __init__(self,ventana):
 		self.matriz=[]
 		self.conjunto=[]
 		self.posicion=[]
@@ -19,12 +21,21 @@ class Grafo:
 
 		opciones=Menu(menu)
 		menu.add_cascade(label="Opciones", menu=opciones)
-		opciones.add_command(label="Salir", command=ventana.quit)
+		opciones.add_command(label="Salir", command=ventana.destroy)
 		opciones.add_separator()
 		opciones.add_command(label="Mostrar Matriz", command=self.mostrar_matriz)
 
+		self.label = Label(ventana, text="", bd=1, relief=SUNKEN, anchor=W)
+		self.label.pack(side=BOTTOM, fill=X)
+
+		ventana.bind("<space>", lambda event:self.dibujar())
+
 		grafo=Button(ventana, text="Mostrar Grafo", command=self.dibujar)
 		grafo.pack(side=BOTTOM)
+
+		ventana.bind("<Escape>", lambda event:ventana.destroy())
+
+#############ESTO CREA LAS PESTAÑAS DE LA VENTANA, AÑADIENDO LOS METODOS EN CADA OPCION#############
 
 	def dibujar(self):
 		self.canvas.delete("all")
@@ -42,8 +53,6 @@ class Grafo:
 						self.canvas.create_arc(x, y, x+22, y+22, start=180, extent=270, style=ARC)
 						self.canvas.create_text(x+8, y, text=str("◄"))
 					else:
-						y1=self.posicion[i][1]+8
-						y1=self.posicion[i][1]+8
 						x1=self.posicion[i][0]+8
 						y1=self.posicion[i][1]+8
 						x2=self.posicion[j][0]+8
@@ -52,32 +61,51 @@ class Grafo:
 		self.canvas.pack()
 
 	def p_arista(self):
-		arista=input("Arista? ")
-		self.agregar_arista(arista)
-		return
+		arista = tkinter.simpledialog.askstring("Grafo", "Ingresa una arista:")
+		if not arista:
+			return
+		else:
+			self.agregar_arista(arista)
+			return
 
 	def p_agregar(self):
-		desde=input("Desde? ")
-		hasta=input("Hasta? ")
+		desde = tkinter.simpledialog.askstring("Grafo", "Desde:")
+		if (desde==None):
+			return
+		hasta = tkinter.simpledialog.askstring("Grafo", "Hasta:")
+		if (hasta==None):
+			return
 		self.agregar_relacion(desde,hasta)
 		return
 
 	def p_eliminar(self):
-		desde=input("Desde? ")
-		hasta=input("Hasta? ")
+		desde = tkinter.simpledialog.askstring("Grafo", "Desde:")
+		if (desde==None):
+			return
+		hasta = tkinter.simpledialog.askstring("Grafo", "Hasta:")
+		if (hasta==None):
+			return
 		self.eliminar_relacion(desde,hasta)
 		return
 
 	def agregar_arista(self,arista):
 		"""Agregar una arista al conjunto"""
 
+		for j in range(len(self.conjunto)):
+			if (self.conjunto[j]==arista):
+				tkinter.messagebox.showerror("Error", "Ya se ha creado esta arista")
+				return
 		self.conjunto.append(arista)
 		self.matriz.append([0])
 		for i in range(len(self.conjunto)-1):
 			self.matriz[i].append(0)
 			self.matriz[len(self.conjunto)-1].append(0)
-		x=int(input("Posicion x positiva: "))
-		y=int(input("Posicion y negativa "))
+		x = tkinter.simpledialog.askinteger("Grafo", "Posicion X positiva:")
+		while (x==None):
+			x = tkinter.simpledialog.askinteger("Grafo", "Posicion X positiva:")
+		y = tkinter.simpledialog.askinteger("Grafo", "Posicion Y negativa:")
+		while (y==None):
+			x = tkinter.simpledialog.askinteger("Grafo", "Posicion Y negativa:")
 		self.posicion.append([x,y])
 
 	def mostrar_matriz(self):
@@ -113,6 +141,7 @@ class Grafo:
 		if a==True and b==True and self.matriz[indice1][indice2]!=1:	
 			self.matriz[indice1][indice2]=1
 		else:
+			print("Usted ya ha agregado esa relacion")
 			return
 
 	def eliminar_relacion(self, desde, hasta):
@@ -133,3 +162,9 @@ class Grafo:
 			self.matriz[indice1][indice2]=0
 		else:
 			return
+
+	def obtener_matriz(self):
+		return self.matriz
+
+	def obtener_len_matriz(self):
+		return len(self.conjunto)
