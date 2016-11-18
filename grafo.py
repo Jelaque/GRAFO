@@ -144,7 +144,7 @@ class Grafo:
 		if a==True and b==True and self.matriz[indice1][indice2]!=1:	
 			self.matriz[indice1][indice2]=1
 		else:
-			print("Usted ya ha agregado esa relacion")
+			tkinter.messagebox.showerror("Error", "Ya se ha creado esta relacion")
 			return
 
 	def eliminar_relacion(self, desde, hasta):
