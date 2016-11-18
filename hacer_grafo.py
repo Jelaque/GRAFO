@@ -7,3 +7,7 @@ ventana.geometry("1240x700") #tamaño
 conjunto=Grafo(ventana)
 #mostrar la pantalla
 ventana.mainloop()
+ventana2=Tk()
+ventana2.geometry("1240x700")
+conjunto2=Grafo(ventana2)
+ventana2.mainloop()
