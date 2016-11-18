@@ -34,6 +34,9 @@ class Grafo:
 		grafo.pack(side=BOTTOM)
 
 		ventana.bind("<Escape>", lambda event:ventana.destroy())
+		ventana.bind("<F1>", lambda event:self.p_arista())
+		ventana.bind("<F2>",lambda event:self.p_agregar())
+		ventana.bind("<F3>", lambda event:self.p_eliminar())
 
 #############ESTO CREA LAS PESTAÑAS DE LA VENTANA, AÑADIENDO LOS METODOS EN CADA OPCION#############
 
