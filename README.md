@@ -2,9 +2,10 @@
 ```python
 python hacer_grafo.py
 ```
-&emsp;&emsp;&nbsp;⁄&nbsp; ‾‾‾‾ &emsp;&emsp;&emsp;⁄&nbsp; ‾‾‾‾ ⁄  &emsp; ⁄&nbsp; ‾‾‾‾ ⁄&emsp;⁄&nbsp; ‾‾‾‾ &emsp;⁄&nbsp; ‾‾‾‾‾‾‾ ⁄    
-&emsp;&nbsp;&nbsp;⁄&emsp;&nbsp;&nbsp;___ &emsp;&nbsp; ⁄ &emsp;&emsp;⁄  &emsp; ⁄&emsp;&emsp;⁄&emsp;⁄ &emsp; &emsp;&nbsp; ⁄&emsp;&emsp;&emsp;&nbsp;⁄  
-&ensp;&nbsp;⁄&emsp;&emsp;&emsp;&nbsp;&nbsp;⁄ &emsp;⁄&nbsp; ‾‾‾‾ \  &emsp; ⁄&nbsp; ‾‾‾‾ ⁄&emsp;⁄&nbsp; ‾‾‾&nbsp;&emsp;⁄&emsp;&emsp;&emsp;&nbsp; ⁄      
+
+**&emsp;&emsp;&nbsp;⁄&nbsp; ‾‾‾‾ &emsp;&emsp;&emsp;⁄&nbsp; ‾‾‾‾ ⁄  &emsp; ⁄&nbsp; ‾‾‾‾ ⁄&emsp;⁄&nbsp; ‾‾‾‾ &emsp;⁄&nbsp; ‾‾‾‾‾‾‾ ⁄**      
+&emsp;&nbsp;&nbsp;**⁄&emsp;&nbsp;&nbsp;___ &emsp;&nbsp; ⁄ &emsp;&emsp;⁄  &emsp; ⁄&emsp;&emsp;⁄&emsp;⁄ &emsp; &emsp;&nbsp; ⁄&emsp;&emsp;&emsp;&nbsp;⁄**      
+&ensp;&nbsp;⁄&emsp;&emsp;&emsp;&nbsp;&nbsp;⁄ &emsp;⁄&nbsp; ‾‾‾‾ \  &emsp; ⁄&nbsp; ‾‾‾‾ ⁄&emsp;⁄&nbsp; ‾‾‾&nbsp;&emsp;⁄&emsp;&emsp;&emsp;&nbsp; ⁄        
 ⁄______ ⁄ &emsp;⁄ &emsp; &emsp;⁄&emsp;⁄&emsp;&emsp; ⁄&emsp;⁄&emsp;&emsp; &nbsp; ⁄______ ⁄   
 
 #### Use Esc button to close(destroy) the window
